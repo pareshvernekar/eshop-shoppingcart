@@ -1,0 +1,28 @@
+server:
+  port:  8081
+spring:
+  application:
+    name: eshop-shoppingcart
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true
+      uri:  http://localhost:8888
+management:
+  endpoint:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: env
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
